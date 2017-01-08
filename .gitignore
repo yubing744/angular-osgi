@@ -1,0 +1,8 @@
+/node_modules
+/coverage
+/.vagrant
+/.grunt
+/dist
+.vscode
+*compiled.js
+*compiled.js.map
