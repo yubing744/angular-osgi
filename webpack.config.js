@@ -10,7 +10,7 @@ var isDebug = function () {
 module.exports = {
 	//设定入口文件（entry）配置 webpack 来指明它的位
 	entry: {
-		"ng-osgi":"./lib/angular-osgi",
+		"ng-osgi":"./lib/AngularOSGI",
 	},
 	
 	output:{
