@@ -1,28 +1,12 @@
 import angular from "angular-kernel";
 import osgi from "angular-osgi";
 
-angular.module("HelloA", [osgi.name])
-    .config(function(){
+import module1 from "./module1";
+import module2 from "./module2";
 
-    })
-    .service("aservice", function(){
+osgi.bootstrap(angular, [
+    module1.name, module2.name
+]);
 
-    })
-    .run(["$bundle", "aservice", function($bundle, a){
-        $bundle.registerService("aservice", aservice);
 
-        var hellowB = require("HelloB");
-        $bundle.loadModule(hellowB);
-    }])
 
-angular.module("HelloB", [osgi.name])
-    .config(function(){
-
-    })
-    .service("aservice", ["$bundle", function($bundle){
-        var ref = $bundle.getServiceRefrence("aservice");
-        return ref.get();
-    }])
-    .run(["$bundle", "aservice", function($bundle, a){
-        $bundle.registerService("aservice", aservice)
-    }])
